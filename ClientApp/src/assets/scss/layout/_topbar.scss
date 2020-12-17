@@ -54,7 +54,7 @@
             display: flex;
         }
 
-         li {
+        li {
           height: 70px;
           line-height: 70px;
 
@@ -62,7 +62,7 @@
             position: relative;
           }
 
-           a {
+        a {
             text-decoration: none;
             color: $layoutMaskBgColor;
             min-width: 120px;
