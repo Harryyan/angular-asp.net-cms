@@ -9,7 +9,6 @@ export class TopNavComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+
 
 }
