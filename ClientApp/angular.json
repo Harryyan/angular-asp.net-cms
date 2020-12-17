@@ -28,7 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/assets/sass/layout/layout.scss",
+              "src/assets/sass/theme/theme.scss",
+              "node_modules/primeicons/primeicons.css"
             ],
             "scripts": []
           },
