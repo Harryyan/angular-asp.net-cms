@@ -6,9 +6,9 @@ export const childRoutes = [
     data: { text: 'Dashboard'}
   },
   {
-    path: 'dashboard',
+    path: 'products',
     loadChildren: () =>
-      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-    data: { text: 'Dashboard'}
-  },
-]
+      import('./products/products.module').then((m) => m.ProductsModule),
+    data: { text: 'Products'}
+  }
+];
