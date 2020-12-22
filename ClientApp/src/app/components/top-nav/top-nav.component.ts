@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DropdownModule } from 'primeng/dropdown';
 
-import { Language } from '../../../models/language';
+import { Language } from '../../models/language';
 
-import { GlobalEventService } from '../../../services/globalEvent.service';
+import { GlobalEventService } from '../../services/globalEvent.service';
 
 @Component({
   selector: 'top-nav',
