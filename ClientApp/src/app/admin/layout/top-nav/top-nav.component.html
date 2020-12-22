@@ -3,19 +3,20 @@
 
   <ul class="topbar-menu">
     <li class = "topbar-submenu">
-      <a [routerLink] = "['']">Dashbaord</a>
+      <a [routerLink] = "['']">{{ 'demo.calendar' | translate }}</a>
     </li>
 
     <li class = "topbar-submenu">
-      <a [routerLink] = "['/products']">Products</a>
+      <a [routerLink] = "['/products']">{{ 'demo.products' | translate }}</a>
     </li>
 
     <li class = "topbar-submenu">
-      <a>Calendar</a>
+      <a>{{ 'demo.calendar' | translate }}</a>
     </li>
   </ul>
 
-  <a href="https://www.primefaces.org/primeng">
+  <!-- <a href="https://www.primefaces.org/primeng">
       <button pButton type="button" label="language" iconPos="right" class="topbar-button"></button>
-  </a>
+  </a> -->
+  <p-dropdown [options]="languages" [(ngModel)]="currentLanguage" optionLabel="name" (onChange)="onLanguageChange($event)"></p-dropdown>
 </div>
