@@ -12,7 +12,8 @@ pool:
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
-  BuildConfiguration: 'Release'
+  buildConfiguration: 'Release'
+  ngBuildConfiguration: '--prod'
 
 stages:
   - stage: Build
@@ -23,6 +24,19 @@ stages:
         displayName: Build solution        
         
         steps:
+          - task: Npm@1
+            displayName: 'npm install'
+            inputs:
+              command: install
+              workingDir: ClientApp
+              
+          - task: Npm@1
+            displayName: 'build angular'
+            inputs:
+              command: custom
+              customCommand: run build -- $(ngBuildConfiguration)
+              workingDir: ClientApp
+              
           - task: UseDotNet@2
             displayName: 'Use .Net Core sdk 5.x'
             inputs:
@@ -38,7 +52,7 @@ stages:
               command: 'publish'
               publishWebProjects: false
               projects: '**/*.csproj'
-              arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+              arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
               zipAfterPublish: true
 
           - task: PublishBuildArtifacts@1

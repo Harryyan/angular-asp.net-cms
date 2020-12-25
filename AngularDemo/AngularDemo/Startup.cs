@@ -46,6 +46,12 @@ namespace AngularDemo
 
             app.UseHttpsRedirection();
 
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("index.html");
+
+            app.UseDefaultFiles(options).UseStaticFiles();
+
             app.UseRouting();
 
             app.UseAuthorization();
