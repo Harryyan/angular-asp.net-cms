@@ -6,6 +6,7 @@ import { TopNavComponent } from '../components/top-nav/top-nav.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { DropdownModule } from 'primeng/dropdown';
 import { TranslateModule } from '@ngx-translate/core';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     DropdownModule,
     TranslateModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MenubarModule
   ],
   declarations: [LayoutComponent, TopNavComponent]
 })
