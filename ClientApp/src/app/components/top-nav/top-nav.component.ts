@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DropdownModule } from 'primeng/dropdown';
 import { MenuItem } from 'primeng/api';
 
 import { Language } from '../../models/language';
@@ -17,78 +16,19 @@ export class TopNavComponent implements OnInit {
 
   items: MenuItem[] = [
     {
-      label: 'File',
-      icon: 'pi pi-fw pi-file',
-      items: [
-        {
-          label: 'New',
-          icon: 'pi pi-fw pi-plus',
-          items: [
-            {label: 'Project'},
-            {label: 'Other'},
-          ]
-        },
-        {label: 'Open'},
-        {separator: true},
-        {label: 'Quit'}
-      ]
+      label: 'Products',
+      icon: 'pi pi-shopping-cart',
+      routerLink: '/products'
     },
     {
-      label: 'Edit',
-      icon: 'pi pi-fw pi-pencil',
-      items: [
-        {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-        {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
-      ]
+      label: 'Calendar',
+      icon: 'pi pi-calendar-plus',
+      routerLink: 'dashboard'
     },
     {
-      label: 'Help',
-      icon: 'pi pi-fw pi-question',
-      items: [
-        {
-            label: 'Contents'
-        },
-        {
-          label: 'Search',
-          icon: 'pi pi-fw pi-search',
-          items: [
-            {
-              label: 'Text',
-              items: [
-                {
-                  label: 'Workspace'
-                }
-              ]
-            },
-            {
-              label: 'File'
-            }
-        ]}
-      ]
-    },
-    {
-      label: 'Actions',
-      icon: 'pi pi-fw pi-cog',
-      items: [
-        {
-          label: 'Edit',
-          icon: 'fa fa-refresh',
-          items: [
-            {label: 'Save', icon: 'pi pi-fw pi-save'},
-            {label: 'Update', icon: 'pi pi-fw pi-save'},
-          ]
-        },
-        {
-          label: 'Other',
-          icon: 'pi pi-fw pi-tags',
-          items: [
-            {label: 'Delete', icon: 'pi pi-fw pi-minus'}
-          ]
-        }
-      ]
-    },
-    {
-        label: 'Quit', icon: 'pi pi-fw pi-times'
+        label: 'Profile',
+        icon: 'pi pi-user-edit',
+        routerLink: 'dashboard'
     }
   ];
 
