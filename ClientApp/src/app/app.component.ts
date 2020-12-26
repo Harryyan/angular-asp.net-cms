@@ -13,7 +13,9 @@ import { GlobalEvent } from './models/GlobalEvent';
 export class AppComponent implements OnInit {
   title = 'Plexure Angular Demo';
 
-  constructor(private config: PrimeNGConfig, private translateService: TranslateService, private globalEventService: GlobalEventService) {}
+  constructor(private config: PrimeNGConfig,
+              private translateService: TranslateService,
+              private globalEventService: GlobalEventService) {}
 
   ngOnInit() {
     this.translateService.setDefaultLang('en');
