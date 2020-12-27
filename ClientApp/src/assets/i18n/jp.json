@@ -36,6 +36,7 @@
   "demo": {
     "calendar": "カレンダー",
     "products": "製品",
-    "dashboard": "ダッシュボード"
+    "dashboard": "ダッシュボード",
+    "profile": "プロフィール"
   }
 }

@@ -29,15 +29,12 @@ export class TopNavComponent implements OnInit {
   ngOnInit() {
     this.translateService.onLangChange.subscribe(
       (event: LangChangeEvent) => {
-        this.items = this.buildMenu();
-
+        this.items = this.buildMenu()
       },
     );
   }
 
   onLanguageChange(event) {
-    console.log(event.value);
-    console.log(event.type);
     this.globalEventService.languageChanged(event.value.code);
   }
 
