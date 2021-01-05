@@ -37,6 +37,7 @@
     "calendar": "Calendar",
     "products": "Products",
     "dashboard": "Dashboard",
-    "profile": "Profile"
+    "profile": "Profile",
+    "offers": "Offers"
   }
 }

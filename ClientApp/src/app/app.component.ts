@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { filter, map, mergeMap } from 'rxjs/operators';
+
 import { PrimeNGConfig } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 
-import { GlobalEventService } from './services/globalEvent.service';
-import { GlobalEvent } from './models/GlobalEvent';
+import { GlobalEventService } from './core/services/global-event.service';
+import { GlobalEvent } from './models/global-event.model';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +17,10 @@ import { GlobalEvent } from './models/GlobalEvent';
 export class AppComponent implements OnInit {
   title = 'Plexure Angular Demo';
 
-  constructor(private config: PrimeNGConfig,
+  constructor(private router: Router,
+              private titleService: Title,
+              private activatedRoute: ActivatedRoute,
+              private config: PrimeNGConfig,
               private translateService: TranslateService,
               private globalEventService: GlobalEventService) {}
 
@@ -24,6 +31,17 @@ export class AppComponent implements OnInit {
         this.translate(event.state);
       }
     });
+
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map(route => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      }),
+      filter(route => route.outlet === 'primary'),
+      mergeMap(route => route.data)
+    ).subscribe((data) => this.titleService.setTitle(data['title']));
   }
 
   translate(lang: string) {

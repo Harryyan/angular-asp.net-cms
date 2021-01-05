@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Language } from '../../models/language';
+import { Language } from '../../../models/language.model';
 
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { GlobalEventService } from '../../services/globalEvent.service';
-import { GlobalEvent } from '../../models/GlobalEvent';
+import { GlobalEventService } from '../../services/global-event.service';
 
 @Component({
   selector: 'top-nav',
@@ -41,25 +40,17 @@ export class TopNavComponent implements OnInit {
   buildMenu(): MenuItem[] {
     return [
       {
-        label: this.translateService.instant("demo.dashboard"),
-        icon: 'pi pi-folder',
-        routerLink: '/dashboard'
-      },
-      {
-        label: this.translateService.instant("demo.products"),
-        icon: 'pi pi-shopping-cart',
-        routerLink: '/products'
+        label: this.translateService.instant("demo.offers"),
+        icon: 'pi pi-list',
+        routerLink: ['/offers'],
+        routerLinkActiveOptions: { exact:true }
       },
       {
         label: this.translateService.instant("demo.calendar"),
         icon: 'pi pi-calendar-plus',
-        routerLink: 'dashboard'
-      },
-      {
-          label: this.translateService.instant("demo.profile"),
-          icon: 'pi pi-user-edit',
-          routerLink: 'dashboard'
-      }
+        routerLink: ['./calendar'],
+        routerLinkActiveOptions: { exact:true }
+      },    
     ];
   }
 }
