@@ -7,12 +7,17 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/offer/offer.module').then((m) => m.OfferModule)
+      import('./features/offer/offer.module').then((m) => m.OfferModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () =>
+      import('./features/calendar/calendar.module').then((m) => m.CalendarModule)
   },
   {
     path: 'weatherforecasts',
     loadChildren: () =>
-      import('./modules/weather-forecast/weather-forecast.module').then((m) => m.WeatherForecastModule)
+      import('./features/weather-forecast/weather-forecast.module').then((m) => m.WeatherForecastModule)
   },
   {
     path: '404',
@@ -27,7 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)    
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })
