@@ -38,6 +38,7 @@
     "products": "Products",
     "dashboard": "Dashboard",
     "profile": "Profile",
-    "offers": "Offers"
+    "offers": "Offers",
+    "weatherforecasts": "Weather Forecasts"
   }
 }

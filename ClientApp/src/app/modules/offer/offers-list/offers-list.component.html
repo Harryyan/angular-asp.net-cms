@@ -1,1 +1,45 @@
-<p>offers-list works!</p>
+<ng-container *ngIf="isLoading$ | async; then loading else loaded">
+</ng-container>
+<ng-template #loading>
+    <p-progressBar mode="indeterminate" [style]="{'height': '6px'}"></p-progressBar>
+</ng-template>
+<ng-template #loaded>
+    <ng-container *ngIf="hasError$ | async; then error else data">
+    </ng-container>
+</ng-template>
+<ng-template #error>
+    <p>Loading error</p>
+</ng-template>
+<ng-template #data>
+    <ng-container *ngIf="offers$ | async as offers">
+        <p-table #dt1 [value]="offers" [globalFilterFields]="['id','title','description']">
+            <ng-template pTemplate="caption">
+                <div class="p-d-flex">
+                    <span class="p-input-icon-left p-ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')"
+                            placeholder="Search keyword" />
+                    </span>
+                </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+                <tr>
+                    <td>{{product.id}}</td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.startDateTime | date:'dd/MM/yyyy'}}</td>
+                    <td>{{product.endDateTime | date:'dd/MM/yyyy'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </ng-container>
+</ng-template>

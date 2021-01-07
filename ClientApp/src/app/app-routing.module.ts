@@ -10,6 +10,11 @@ const routes: Routes = [
       import('./modules/offer/offer.module').then((m) => m.OfferModule)
   },
   {
+    path: 'weatherforecasts',
+    loadChildren: () =>
+      import('./modules/weather-forecast/weather-forecast.module').then((m) => m.WeatherForecastModule)
+  },
+  {
     path: '404',
     component: PageNotFoundComponent,
     data: { title: 'Page Not Found' }

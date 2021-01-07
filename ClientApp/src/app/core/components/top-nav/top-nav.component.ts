@@ -48,7 +48,13 @@ export class TopNavComponent implements OnInit {
       {
         label: this.translateService.instant("demo.calendar"),
         icon: 'pi pi-calendar-plus',
-        routerLink: ['./calendar'],
+        routerLink: ['/calendar'],
+        routerLinkActiveOptions: { exact:true }
+      },
+      {
+        label: this.translateService.instant("demo.weatherforecasts"),
+        icon: 'pi pi-globe',
+        routerLink: ['/weatherforecasts'],
         routerLinkActiveOptions: { exact:true }
       },    
     ];

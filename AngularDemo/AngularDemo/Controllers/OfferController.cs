@@ -37,7 +37,7 @@ namespace AngularDemo.Controllers
         [HttpGet]
         public IEnumerable<Offer> Get()
         {
-            return _offers.OrderBy(x => x.StartDate);
+            return _offers.OrderBy(x => x.StartDateTime);
         }
 
         [HttpPost]
