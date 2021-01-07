@@ -4,20 +4,21 @@ import { CommonModule } from '@angular/common';
 import { OfferRoutingModule } from './routing/offer-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { OffersListComponent } from './offers-list/offers-list.component';
-import { OffersCalendarComponent } from './offers-calendar/offers-calendar.component';
 import { NewOfferComponent } from './new-offer/new-offer.component';
-import {TableModule} from 'primeng/table';
-import {ProgressBarModule} from 'primeng/progressbar';
+import { TableModule } from 'primeng/table';
+import { ProgressBarModule } from 'primeng/progressbar';
 import { OfferStoreModule } from './store/offer-store.module';
+import { OffersCalendarModule } from './offers-calendar/offers-calendar.module';
 
 
 @NgModule({
-  declarations: [OffersListComponent, OffersCalendarComponent, NewOfferComponent],
+  declarations: [OffersListComponent, NewOfferComponent],
   imports: [
     CommonModule,
     SharedModule,
     OfferRoutingModule,
     OfferStoreModule,
+    OffersCalendarModule,
     TableModule,
     ProgressBarModule
   ]

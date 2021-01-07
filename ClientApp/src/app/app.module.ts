@@ -18,6 +18,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { FullCalendarModule } from 'primeng/fullcalendar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FullCalendarModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {

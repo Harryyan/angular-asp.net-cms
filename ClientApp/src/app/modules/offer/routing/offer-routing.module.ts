@@ -18,7 +18,9 @@ const routes: Routes = [
         path: 'offers', component: OffersListComponent, data: { title: 'Offers List'}
       },
       {
-        path: 'calendar', component: OffersCalendarComponent, data: { title: 'Offers Calendar View'}
+        path: 'calendar',
+        loadChildren: () =>
+          import('../offers-calendar/offers-calendar.module').then((m) => m.OffersCalendarModule)
       }
     ]
   }
