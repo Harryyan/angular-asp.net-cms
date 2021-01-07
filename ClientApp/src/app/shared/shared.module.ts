@@ -8,7 +8,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TopNavComponent } from '../core/components/top-nav/top-nav.component';
-import { LayoutComponent } from '../layouts/main/layout.component';
+import { LayoutComponent } from '../core/components/layouts/main/layout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { LayoutComponent } from '../layouts/main/layout.component';
     DropdownModule,
     MenubarModule,
     InputTextModule,
-    TranslateModule    
+    TranslateModule
   ],
   exports: [
     FormsModule,
