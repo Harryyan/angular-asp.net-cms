@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { fromEventPattern } from 'rxjs';
 
-import { LayoutComponent } from '../../../layouts/main/layout.component';
+import { LayoutComponent } from '../../../core/components/layouts/main/layout.component';
 
 import { ForecastComponent } from '../forecast/forecast.component';
 
