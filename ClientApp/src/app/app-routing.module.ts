@@ -10,11 +10,6 @@ const routes: Routes = [
       import('./features/offer/offer.module').then((m) => m.OfferModule)
   },
   {
-    path: 'calendar',
-    loadChildren: () =>
-      import('./features/calendar/calendar.module').then((m) => m.CalendarModule)
-  },
-  {
     path: 'weatherforecasts',
     loadChildren: () =>
       import('./features/weather-forecast/weather-forecast.module').then((m) => m.WeatherForecastModule)

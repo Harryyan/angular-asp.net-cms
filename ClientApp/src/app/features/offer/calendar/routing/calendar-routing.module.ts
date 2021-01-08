@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CalendarComponent } from '../calendar/calendar.component';
-import { LayoutComponent } from '../../../core/components/layouts/main/layout.component';
+import { LayoutComponent } from '../../../../core/components/layouts/main/layout.component';
 
 const routes: Routes = [
   {

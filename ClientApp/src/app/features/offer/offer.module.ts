@@ -8,7 +8,7 @@ import { NewOfferComponent } from './new-offer/new-offer.component';
 import { TableModule } from 'primeng/table';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { OfferStoreModule } from './store/offer-store.module';
-import { CalendarModule } from '../calendar/calendar.module';
+import { CalendarModule } from './calendar/calendar.module';
 
 
 @NgModule({
