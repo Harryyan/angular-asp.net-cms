@@ -39,6 +39,19 @@
     "dashboard": "Dashboard",
     "profile": "Profile",
     "offers": "Offers",
-    "weatherforecasts": "Weather Forecasts"
+    "weatherforecasts": "Weather Forecasts",
+    "button": {
+      "create": "Create",
+      "cancel": "Cancel"
+    },
+    "offer": {
+      "newOffer": "New Offer",
+      "title": "Title",
+      "description": "Description",
+      "startDateTime": "Start Date Time",
+      "endDateTime": "End Date Time",
+      "isRespawning": "Repeatable",
+      "respawnStartTime": "Respawn Start Time"
+    }
   }
 }

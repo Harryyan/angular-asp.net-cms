@@ -39,6 +39,19 @@
     "dashboard": "ダッシュボード",
     "profile": "プロフィール",
     "offers": "オファー",
-    "weatherforecasts": "気象予報"
+    "weatherforecasts": "気象予報",
+    "button": {
+      "create": "作成する",
+      "cancel": "取消"
+    },
+    "offer": {
+      "newOffer": "新しいオファー",
+      "title": "題名",
+      "description": "説明",
+      "startDateTime": "開始日時",
+      "endDateTime": "終了日時",
+      "isRespawning": "繰り返し可能",
+      "respawnStartTime": "リスポーン開始時間"
+    }
   }
 }

@@ -1,1 +1,38 @@
-<p>new-offer works!</p>
+<div class="form-container">
+  <form [formGroup]="newOfferForm" (ngSubmit)="create(newOfferForm.value)">
+    <h3>{{ 'demo.offer.newOffer' | translate }}</h3>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="new-offer-title">{{ 'demo.offer.title' | translate }}</label>
+        <input id="new-offer-title" type="text" pInputText formControlName="title"> 
+      </div>
+      <div class="p-field p-col-12">
+        <label for="new-offer-description">{{ 'demo.offer.description' | translate }}</label>
+        <input id="new-offer-description" type="text" pInputText formControlName="description"> 
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="new-offer-startDateTime">{{ 'demo.offer.startDateTime' | translate }}</label>
+        <p-calendar id="new-offer-startDateTime" formControlName="startDateTime" showTime="true" hourFormat="24" dateFormat="dd-mm-yy"></p-calendar>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="new-offer-endDateTime">{{ 'demo.offer.endDateTime' | translate }}</label>
+        <p-calendar id="new-offer-endDateTime" formControlName="endDateTime" showTime="true" hourFormat="24" dateFormat="dd-mm-yy"></p-calendar>
+      </div>
+      <div class="p-field p-col-12">
+        <!-- <label for="new-offer-isRespawningOffer">{{ 'demo.offer.isRespawning' | translate }}</label> -->
+        <h5>{{ 'demo.offer.isRespawning' | translate }}</h5>
+        <p-inputSwitch id="new-offer-isRespawningOffer" formControlName="isRespawningOffer"></p-inputSwitch>
+      </div>
+      <div class="p-field p-col-12 p-md-12" [hidden]="!newOfferForm.controls['isRespawningOffer'].value">
+        <label for="new-offer-respawnStartTime">{{ 'demo.offer.respawnStartTime' | translate }}</label>
+        <p-calendar id="new-offer-respawnStartTime" formControlName="respawnStartTime" showTime="true" hourFormat="24" dateFormat="dd-mm-yy"></p-calendar>
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+        <button pButton type="submit" label="{{'demo.button.create' | translate}}" [disabled]="!newOfferForm.valid"></button>
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+        <button pButton type="button" class="p-button-secondary" label="{{'demo.button.cancel' | translate}}" (click)="cancel()"></button>
+      </div>      
+    </div>    
+  </form>
+</div> 
