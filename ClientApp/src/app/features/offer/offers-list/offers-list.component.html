@@ -12,9 +12,10 @@
 </ng-template>
 <ng-template #data>
     <ng-container *ngIf="offers$ | async as offers">
-        <p-table #dt1 [value]="offers" [globalFilterFields]="['id','title','description']">
+        <p-table #dt1 [value]="offers" [globalFilterFields]="['id','title','description']" styleClass="offer-list-table">
             <ng-template pTemplate="caption">
                 <div class="p-d-flex">
+                    <button pButton type="button" class="p-button-rounded p-button-success" label="{{'demo.offer.newOffer' | translate}}" routerLink="/offers/newoffer"></button>
                     <span class="p-input-icon-left p-ml-auto">
                         <i class="pi pi-search"></i>
                         <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')"
@@ -24,20 +25,35 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th pSortableColumn="id">{{ 'demo.offer.id' | translate }} <p-sortIcon field="id"></p-sortIcon></th>
+                    <th pSortableColumn="title">{{ 'demo.offer.title' | translate }} <p-sortIcon field="title"></p-sortIcon></th>
+                    <th pSortableColumn="description">{{ 'demo.offer.description' | translate }} <p-sortIcon field="description"></p-sortIcon></th>
+                    <th pSortableColumn="startDateTime">{{ 'demo.offer.startDateTime' | translate }} <p-sortIcon field="startDateTime"></p-sortIcon></th>
+                    <th pSortableColumn="endDateTime">{{ 'demo.offer.endDateTime' | translate }} <p-sortIcon field="endDateTime"></p-sortIcon></th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-product>
+            <ng-template pTemplate="body" let-offer>
                 <tr>
-                    <td>{{product.id}}</td>
-                    <td>{{product.title}}</td>
-                    <td>{{product.description}}</td>
-                    <td>{{product.startDateTime | date:'dd/MM/yyyy'}}</td>
-                    <td>{{product.endDateTime | date:'dd/MM/yyyy'}}</td>
+                    <td>
+                        <span class="p-column-title">{{ 'demo.offer.id' | translate }}</span>
+                        {{offer.id}}
+                    </td>
+                    <td>
+                        <span class="p-column-title">{{ 'demo.offer.title' | translate }}</span>
+                        {{offer.title}}
+                    </td>
+                    <td>
+                        <span class="p-column-title">{{ 'demo.offer.description' | translate }}</span>
+                        {{offer.description}}
+                    </td>
+                    <td>
+                        <span class="p-column-title">{{ 'demo.offer.startDateTime' | translate }}</span>
+                        {{offer.startDateTime | date:'dd/MM/yyyy'}}
+                    </td>
+                    <td>
+                        <span class="p-column-title">{{ 'demo.offer.endDateTime' | translate }}</span>
+                        {{offer.endDateTime | date:'dd/MM/yyyy'}}
+                    </td>
                 </tr>
             </ng-template>
         </p-table>

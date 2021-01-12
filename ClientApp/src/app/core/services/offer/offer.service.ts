@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Offer } from '../models/offer';
-import { API_URLS } from './api-urls';
+import { Offer } from '../../../features/offer/models/offer';
+import { API_URLS } from '../../constants/api-urls';
 import { HttpClient } from '@angular/common/http';
 import { publishLast, refCount, delay } from 'rxjs/operators';
 
@@ -19,4 +19,10 @@ export class OfferService {
             refCount()
         );
     }
+
+     public createOffer(newOffer: Offer): Observable<any> {
+        let url = '/api/Offer';
+
+        return this.http.post(url, newOffer, { observe: 'response' });
+     }
 }

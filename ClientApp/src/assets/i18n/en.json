@@ -51,7 +51,10 @@
       "startDateTime": "Start Date Time",
       "endDateTime": "End Date Time",
       "isRespawning": "Repeatable",
-      "respawnStartTime": "Respawn Start Time"
+      "respawnStartTime": "Respawn Start Time",
+      "endDateError": "The end date time has to be later than start date time",
+      "respawnStartTimeError": "Respawn start date time is required for repeatable offers",
+      "id": "Id"
     }
   }
 }

@@ -6,6 +6,11 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 const routes: Routes = [
   {
     path: '',
+    redirectTo: "offers",
+    pathMatch: 'full'
+  },
+  {
+    path: 'offers',
     loadChildren: () =>
       import('./features/offer/offer.module').then((m) => m.OfferModule)
   },

@@ -6,7 +6,7 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 import { PrimeNGConfig } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 
-import { GlobalEventService } from './core/services/global-event.service';
+import { GlobalEventService } from './core/services/global/global-event.service';
 import { GlobalEvent } from './models/global-event.model';
 
 @Component({

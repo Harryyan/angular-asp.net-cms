@@ -12,6 +12,6 @@ namespace AngularDemo.Models
 		public bool IsRespawningOffer { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public int? RespawnStartTime { get; set; }
+        public DateTime? RespawnStartTime { get; set; }
     }
 }

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Offer } from '../models/offer';
-import { NewOfferValidator } from '../validators/NewOfferValidator';
+import { OfferRespawnStartDateValidator, OfferDateValidator } from '../validators/NewOfferValidator';
+
+import { OfferService } from '../../../core/services/offer/offer.service';
 
 @Component({
   selector: 'app-new-offer',
@@ -16,18 +19,23 @@ export class NewOfferComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private router:Router,
+    private offerService: OfferService
   ) {
     this.newOffer = new Offer();
     this.newOfferForm = formBuilder.group({
       'title': [null, Validators.required],
       'description': [null, Validators.required],
       'startDateTime': [new Date(), Validators.required],
-      'endDateTime': [new Date(), Validators.required],
+      'endDateTime': [null, Validators.required],
       'isRespawningOffer': [false, Validators.required],
       'respawnStartTime': [null]
     },
     {
-      validators: [NewOfferValidator]
+      validators: [
+        OfferRespawnStartDateValidator, 
+        OfferDateValidator
+      ]
     });
   }
 
@@ -35,10 +43,21 @@ export class NewOfferComponent implements OnInit {
   }
 
   create(formValue) {
-    console.log(formValue);
+    this.newOffer.id = 0;
+    this.newOffer.title = formValue.title;
+    this.newOffer.description = formValue.description;
+    this.newOffer.startDateTime = formValue.startDateTime;
+    this.newOffer.endDateTime = formValue.endDateTime;
+    this.newOffer.isRespawningOffer = formValue.isRespawningOffer;
+    this.newOffer.respawnStartTime = formValue.respawnStartTime;
+    this.offerService.createOffer(this.newOffer).subscribe(res => {
+      if (res.status == 200) {
+        this.router.navigate(['/offers/offerlist']);    
+      }
+    });
   }
 
   cancel() {
-    console.log("Cancel create offer");
+    this.router.navigate(['/offers/offerlist']);
   }
 }

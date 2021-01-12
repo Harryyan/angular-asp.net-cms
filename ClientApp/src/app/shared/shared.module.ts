@@ -8,6 +8,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { ButtonModule } from 'primeng/button';
+import { FullCalendarModule } from 'primeng/fullcalendar';
+import { MessageModule } from 'primeng/message';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TopNavComponent } from '../core/components/top-nav/top-nav.component';
@@ -28,6 +30,8 @@ import { LayoutComponent } from '../core/components/layouts/main/layout.componen
     CalendarModule,
     InputSwitchModule,
     ButtonModule,
+    FullCalendarModule,
+    MessageModule,
     TranslateModule    
   ],
   exports: [
@@ -39,6 +43,8 @@ import { LayoutComponent } from '../core/components/layouts/main/layout.componen
     CalendarModule,
     InputSwitchModule,
     ButtonModule,
+    FullCalendarModule,
+    MessageModule,
     TranslateModule,
     TopNavComponent,
     LayoutComponent

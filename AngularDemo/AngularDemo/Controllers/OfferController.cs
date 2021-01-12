@@ -41,9 +41,12 @@ namespace AngularDemo.Controllers
         }
 
         [HttpPost]
-        public void Post(Offer offer)
+        public IActionResult Post(Offer offer)
         {
+            var largestId = _offers.Max(offer => offer.Id);
+            offer.Id = largestId + 1;
             _offers.Add(offer);
+            return Ok();
         }
     }
 }

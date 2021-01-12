@@ -4,6 +4,7 @@ import { LoadOffersAction } from './offer.actions';
 import { getOffersSelector, getIsLoadingSelector, getHasErrorSelector } from './offer.selectors';
 import { Offer } from '../models/offer';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class OfferFacade {
@@ -15,7 +16,7 @@ export class OfferFacade {
     }
 
     public getOffers(): Observable<Offer[]> {
-        return this.store$.pipe(select(getOffersSelector));
+        return this.store$.pipe(select(getOffersSelector), map(x=>([...x])));
     }
 
     public getisLoading(): Observable<boolean> {

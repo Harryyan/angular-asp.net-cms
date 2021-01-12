@@ -51,7 +51,10 @@
       "startDateTime": "開始日時",
       "endDateTime": "終了日時",
       "isRespawning": "繰り返し可能",
-      "respawnStartTime": "リスポーン開始時間"
+      "respawnStartTime": "リスポーン開始時間",
+      "endDateError": "終了日時は開始日時より後でなければなりません",
+      "respawnStartTimeError": "繰り返し可能なオファーには、リスポーン開始日時が必要です",
+      "id": "Id"
     }
   }
 }

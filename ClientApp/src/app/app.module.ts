@@ -12,25 +12,24 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SharedModule } from './shared/shared.module';
 
-import { GlobalEventService } from './core/services/global-event.service';
+import { GlobalEventService } from './core/services/global/global-event.service';
+import { OfferService } from './core/services/offer/offer.service';
+
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { FullCalendarModule } from 'primeng/fullcalendar';
-
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent
-   ],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FullCalendarModule,
     SharedModule,
     TranslateModule.forRoot({
       loader: {
@@ -47,7 +46,8 @@ import { FullCalendarModule } from 'primeng/fullcalendar';
   ],
   providers: [
     GlobalEventService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    OfferService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

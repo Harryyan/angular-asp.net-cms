@@ -3,7 +3,7 @@ import { MenuItem } from 'primeng/api';
 import { Language } from '../../../models/language.model';
 
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { GlobalEventService } from '../../services/global-event.service';
+import { GlobalEventService } from '../../services/global/global-event.service';
 
 @Component({
   selector: 'top-nav',
@@ -42,13 +42,13 @@ export class TopNavComponent implements OnInit {
       {
         label: this.translateService.instant("demo.offers"),
         icon: 'pi pi-list',
-        routerLink: ['/offers'],
+        routerLink: ['/offers/offerlist'],
         routerLinkActiveOptions: { exact:true }
       },
       {
         label: this.translateService.instant("demo.calendar"),
         icon: 'pi pi-calendar-plus',
-        routerLink: ['/calendar'],
+        routerLink: ['/offers/calendar'],
         routerLinkActiveOptions: { exact:true }
       },
       {

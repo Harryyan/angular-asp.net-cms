@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import * as actions from './offer.actions';
-import { OfferService } from '../api/offer.service';
+import { OfferService } from '../../../core/services/offer/offer.service';
 
 @Injectable()
 export class OfferEffects {

@@ -4,22 +4,26 @@ import { LayoutComponent } from '../../../core/components/layouts/main/layout.co
 
 import { OffersListComponent } from '../offers-list/offers-list.component'
 import { NewOfferComponent } from '../new-offer/new-offer.component';
+import { CalendarComponent } from '../calendar/calendar.component';
 
 const routes: Routes = [
   {
-    path: 'offers',
+    path: '',
     component: LayoutComponent,
     children: [
       {
         path: '',
-        redirectTo: 'offers'
+        redirectTo: 'offerlist'
       },
       {
-        path: 'offers', component: OffersListComponent, data: { title: 'Offers List'}
+        path: 'offerlist', component: OffersListComponent, data: { title: 'Offers List'}
       },
       {
         path: 'newoffer', component: NewOfferComponent, data: { title: 'New Offer'}
-      }
+      },
+      {
+        path: 'calendar', component: CalendarComponent, data: { title: 'Calendar View'}
+      },
     ]
   }
 ];
