@@ -18,7 +18,7 @@ import { map } from 'rxjs/operators';
 export class CalendarComponent implements OnInit {
   options = {
     plugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
-    defaultDate: '2021-02-01',
+    defaultDate: new Date(),
     header: {
       left: 'prev,next',
       center: 'title',
