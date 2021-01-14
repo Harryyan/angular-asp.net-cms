@@ -13,6 +13,7 @@ export class OfferService {
     }
 
     public getOffers(): Observable<Offer[]> {
+      console.log("###");
         return this.http.get<Offer[]>(this.baseUrl + API_URLS.getOffers).pipe(
             delay(1000), //Added to make loading indicator visible
             publishLast(),

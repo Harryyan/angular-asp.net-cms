@@ -1,1 +1,3 @@
-<p-fullCalendar [events]="events" [options]="options"></p-fullCalendar>
+<ng-container *ngIf="offers$ | async as events">
+  <p-fullCalendar [events]="events" [options]="options"></p-fullCalendar>
+</ng-container>

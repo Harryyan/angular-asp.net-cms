@@ -9,3 +9,10 @@ export class Offer {
     categoryName?: string | null;
     respawnStartTime?: number | null;
 }
+
+export class OfferCalendarDTO {
+  id: number;
+  title: string;
+  start: Date;
+  end: Date;
+}
