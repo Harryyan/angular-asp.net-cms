@@ -15,4 +15,5 @@ export class OfferCalendarDTO {
   title: string;
   start: Date;
   end: Date;
+  color: string;
 }
