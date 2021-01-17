@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  environmentName: 'PROD',
+  environmentName: 'QA',
   apiUrl: 'https://plexure-angular-demo.azurewebsites.net'
 };
