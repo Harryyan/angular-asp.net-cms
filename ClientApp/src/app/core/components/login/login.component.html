@@ -1,0 +1,17 @@
+<div class="p-grid p-fluid p-formgrid p-justify-center container">
+  <div class="p-col-fixed form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" autocomplete="off">
+      <div class="p-field p-col-12 p-md-6">
+        <label for="login-userName">User Name</label>
+        <input id="login-userName" type="text" pInputText formControlName="userName"> 
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" pInputText formControlName="password"> 
+      </div>
+      <div class="button-container">
+        <button pButton label="Login" class="ui-button-raised" type="submit" [disabled]="!loginForm.valid"></button>
+      </div>
+    </form>
+  </div>
+</div>

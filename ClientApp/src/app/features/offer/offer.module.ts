@@ -10,7 +10,6 @@ import { TableModule } from 'primeng/table';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { OfferStoreModule } from './store/offer-store.module';
 
-
 @NgModule({
   declarations: [
     OffersListComponent, 

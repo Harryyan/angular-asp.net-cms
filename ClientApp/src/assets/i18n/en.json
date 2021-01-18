@@ -32,8 +32,12 @@
     "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     "today": "Today",
     "weekHeader": "Wk"
-  },
+  },  
   "demo": {
+    "login": {
+      "userName": "User Name",
+      "password": "Password"
+    },
     "calendar": "Calendar",
     "products": "Products",
     "dashboard": "Dashboard",

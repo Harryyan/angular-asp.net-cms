@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
@@ -13,17 +13,24 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SharedModule } from './shared/shared.module';
 
 import { GlobalEventService } from './core/services/global/global-event.service';
+import { AuthService } from './core//services/global/auth.service';
 import { OfferService } from './core/services/offer/offer.service';
+
+import { AuthGuard } from './core/guards/auth.guard';
+
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
 
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LoginComponent } from './core/components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +53,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
   ],
   providers: [
     GlobalEventService,
+    AuthService,
     OfferService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    { 
+      provide: LocationStrategy, 
+      useClass: HashLocationStrategy 
+    }
   ],
   bootstrap: [AppComponent]
 })

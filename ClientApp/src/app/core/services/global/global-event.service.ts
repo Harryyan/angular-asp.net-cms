@@ -1,4 +1,4 @@
-import { Injectable ,EventEmitter} from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { GlobalEvent } from '../../../models/global-event.model';
 
 @Injectable({

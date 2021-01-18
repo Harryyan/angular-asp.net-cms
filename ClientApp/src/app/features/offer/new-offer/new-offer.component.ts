@@ -19,7 +19,7 @@ export class NewOfferComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router:Router,
+    private router: Router,
     private offerService: OfferService
   ) {
     this.newOffer = new Offer();

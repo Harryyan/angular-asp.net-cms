@@ -43,10 +43,6 @@ describe('TestComponent', () => {
 
   it('form invalid when title is empty', () => {
     let title = component.newOfferForm.controls['title'];
-
-    
-    //fixture.detectChanges();
-
     expect(component.newOfferForm.valid).toBeFalsy();
   });
 });

@@ -1,0 +1,30 @@
+.container {  
+  height: 100%;
+  h2 {
+    width: 100%;
+    color: #eee;
+    text-align: center;
+  }
+}
+
+.form-container {
+  margin-top: 200px;
+  width:300px;
+  padding-top: 30px !important;
+  span {
+    margin-top: 30px;
+  }
+}
+
+.ui-inputtext {
+  width: 100%;
+}
+
+.button-container {
+  padding: 20px 0;
+  width: 100%;
+}
+
+.ui-button {
+  width: 100%;
+}
