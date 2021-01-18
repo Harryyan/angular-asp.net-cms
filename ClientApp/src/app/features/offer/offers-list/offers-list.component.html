@@ -12,7 +12,7 @@
 </ng-template>
 <ng-template #data>
     <ng-container *ngIf="offers$ | async as offers">
-        <p-table #dt1 [value]="offers" [globalFilterFields]="['id','title','description']" styleClass="offer-list-table">
+        <p-table #dt1 [value]="offers" [globalFilterFields]="['id','title','description']" styleClass="offer-list-table" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[10,25]">
             <ng-template pTemplate="caption">
                 <div class="p-d-flex">
                     <button pButton type="button" class="p-button-rounded p-button-success" label="{{'demo.offer.newOffer' | translate}}" routerLink="/offers/newoffer"></button>
@@ -30,6 +30,21 @@
                     <th pSortableColumn="description">{{ 'demo.offer.description' | translate }} <p-sortIcon field="description"></p-sortIcon></th>
                     <th pSortableColumn="startDateTime">{{ 'demo.offer.startDateTime' | translate }} <p-sortIcon field="startDateTime"></p-sortIcon></th>
                     <th pSortableColumn="endDateTime">{{ 'demo.offer.endDateTime' | translate }} <p-sortIcon field="endDateTime"></p-sortIcon></th>
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter type="text" field="id"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="title"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="description"></p-columnFilter>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-offer>

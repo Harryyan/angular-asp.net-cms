@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NewOfferComponent } from './new-offer.component';
 import { SharedModule } from '../../../shared/shared.module';
@@ -17,8 +17,7 @@ describe('TestComponent', () => {
         NewOfferComponent 
       ],
       imports: [
-        SharedModule,
-        RouterTestingModule,
+        SharedModule,        
         HttpClientTestingModule,
         TranslateModule.forRoot({
           loader: {
@@ -28,6 +27,7 @@ describe('TestComponent', () => {
         })
       ],
       providers: [
+        Router,
         OfferService,
         TranslateService
       ]

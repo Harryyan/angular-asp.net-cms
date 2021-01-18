@@ -21,5 +21,4 @@ export class OffersListComponent implements OnInit {
     this.offers$ = this.offerFacade.getOffers();
     this.offerFacade.loadOffers();
   }
-
 }
